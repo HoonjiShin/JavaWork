@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>주문폼 작성</title>
+</head>
+<style>
+label{
+	font-size:13px;
+	padding-right: 20px;
+}
+p{
+	font-size: 12px;
+	display:inline;
+}
+#title{
+	font-size:20px;
+}
+#detail{
+	display:block;
+	width:450px;
+	height: 13px;
+    margin-top: 5px;
+}
+#phone-detail{
+	width:80px;
+}
+#email{
+	width:80px;
+}
+#checking,#findadd{
+	width: 80px;
+    font-size: 12px;
+}
+</style>
+<body>
+<div>
+<label id="title">주문자 정보 입력</label>
+	<table style="border-style:double;  min-width: 800px;  padding: 15px;">
+	<tr>
+		<td>
+		<label>주문자 정보</label>
+		</td>
+		<td>
+			<p>비회원으로 상품구매 시 반드시 본인인증을 하셔야 합니다.</p>
+			<input id="checking" type="submit" value="휴대폰인증"/>
+			<input id="checking" type="submit" value="아이핀인증"/>
+			</td>
+	</tr>
+	<tr>
+	<td><label>주소</label></td>
+	<td>
+		<input style="background: #eaeaea;""type="text"/>
+		<input id="findadd" type="submit" value="주소찾기"/>
+		<input style="background: #eaeaea;" id="detail" type="text"/>
+		<input id="detail" type="text"/>
+	</td>
+	</tr>
+	<tr>
+	<td><label>휴대전화</label></td>
+	<td>
+		<select name='number'>
+		  <option value='first' selected>010</option>
+		  <option value='second'>011</option>
+		  <option value='third'>016</option>
+		</select>
+		-
+		<input id="phone-detail" type="text"/>
+		-
+		<input id="phone-detail" type="text"/>
+		<label><input type="checkbox" value="SMS수신동의" checked>SMS수신동의</label>
+	</td>
+	</tr>
+	<tr>
+	<td>
+		<label>이메일</label>
+	</td>
+	<td>
+		<input id="email" type="text"/>@
+		<input id="email" type="text"/>
+		<select name='email'>
+		  <option value='first' selected>직접입력</option>
+		  <option value='second'>naver.com</option>
+		  <option value='third'>daum.net</option>
+		</select>
+	</td>
+	</tr>
+	</table>
+</div>
+<div>
+	<label id="title">배송지 정보 입력</label>
+	<table style="border-style:double;  min-width: 800px;  padding: 15px;">
+	<tr>
+		<td>
+		<label>배송지 선택</label>
+		</td>
+		<td>
+			<input id="sameaddr" type="submit" value="주문지 정보와 동일"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<label>받으시는 분</label>
+		</td>
+		<td>
+		<input id="name" type="text"/>
+		</td>
+	</tr>
+	<tr>
+	<td><label>주소</label></td>
+	<td>
+		<input type="text"/>
+		<input id="findadd" type="submit" value="주소찾기"/>
+		<input id="detail" type="text"/>
+		<input id="detail" type="text"/>
+	</td>
+	</tr>
+	<tr>
+	<td><label>휴대전화</label></td>
+	<td>
+		<select name='number'>
+		  <option value='first' selected>010</option>
+		  <option value='second'>011</option>
+		  <option value='third'>016</option>
+		</select>
+		-
+		<input id="phone-detail" type="text"/>
+		-
+		<input id="phone-detail" type="text"/>
+		<label><input type="checkbox" value="safenumber" checked>안심번호 사용(무료)</label>
+		<label><input type="checkbox" value="homenumber">집전화 추가 입력</label>
+	</td>
+	</tr>
+	<tr>
+	<td>
+		<label>배송시 요구사항</label>
+	</td>
+	<td>
+		<label><input type="text"/> (0자/50자)<br>*특정한 배송일을 지정하고자 할 경우 판매자와 연락하여 배송일을 확인해주시기 바랍니다.</label>
+	</td>
+	</tr>
+	</table>
+</div>
+<div>
+	<label id="title">결제 정보 입력</label>
+	<table style="border-style:double; min-width: 800px;   padding: 15px;">
+	<tr>
+		<td>
+		<label>신용카드</label>
+		</td>
+		<td>
+			<input type="radio" name="chk_info" value="card1">신용카드(일반)
+			<input type="radio" name="chk_info" value="card2">신용카드(법인)
+			<input type="radio" name="chk_info" value="card3">해외발급카드
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<label>현금결제</label>
+		</td>
+		<td>
+			<input type="radio" name="chk_info" value="check1">무통장입급
+			<input type="radio" name="chk_info" value="check2">실시간계좌이체
+		</td>
+	</tr>
+	<tr>
+	<td><label>카드선택</label></td>
+	<td>
+		<select name='card'>
+		  <option value='first' selected>선택하세요</option>
+		  <option value='second'>카카오뱅크</option>
+		  <option value='third'>신한</option>
+		</select>
+	</td>
+	</tr>
+	<tr>
+	<td><label>할부방식</label></td>
+	<td>
+		<select name='month'>
+		  <option value='first' selected>일시불</option>
+		  <option value='second'>6개월</option>
+		  <option value='third'>12개월</option>
+		</select>
+	</td>
+	</tr>
+	<tr>
+	<td>
+		<label>결제안내</label>
+	</td>
+	<td>
+		<input id="pay1" type="submit" value="간편결제안내"/>
+		<input id="pay2" type="submit" value="공인인증안내"/>
+		<input id="pay3" type="submit" value="안전결제안내"/>
+		<input id="pay4" type="submit" value="안심클릭안내"/>
+		<input id="pay5" type="submit" value="해외발급카드안내"/>
+	</td>
+	</tr>
+	</table>
+</div>
+
+</body>
+</html>

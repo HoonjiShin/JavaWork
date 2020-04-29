@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>접수중인 지원사업</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style>
+ul {
+	list-style-type: none;  /* disc 모양 없애기 */
+	overflow: hidden;
+}
+
+li {
+	float: left;  /* 줄바꿈 했던 li 를 일렬로 + 좌측정렬 */
+	padding: 20px;
+}
+
+li a {
+	text-decoration: none;
+	padding: 16px;
+	color: black;
+	display: block;
+}
+
+li:hover {
+	background-color: #318bcf;
+	color:white;
+}
+#title-list{
+    text-align: left;
+    padding-left: 50px;
+}
+#notice{
+	    font-size: 12px;
+	    text-align:left;
+}
+p{
+	display:inline;
+	color: #ec6c69;
+}
+
+#cal>tr>th{
+    padding-top: 15px;
+    padding-bottom: 15px;}
+</style>
+</head>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<!-- 오늘날 웹에서 li, ol 은 메뉴 작성에도 많이 사용됨. -->
+<body>
+<div  align="center">
+<ul style="display: inline-table;padding-left: 0px;">
+  <li>정책차림표</li>
+  <li>미리보는 지원사업</li>
+  <li>마감임박 지원사업</li>
+  <li>접수중인 지원사업</li>
+</ul>
+</div>
+<div align=center style="margin-top: 15px;font-size: 23px; margin-bottom: 15px;">
+<i class="fas fa-chevron-left"></i>
+<p style="font-size: 25px;
+    color: #318bcf;">2015-06-17</p>
+<i class="fas fa-chevron-right"></i>
+</div>
+<div align=center style="margin-top: 15px; margin-bottom: 15px; font-size: 11px;"> 
+	<input type="radio" value="card1" checked>전체
+	<input type="radio"value="card2">창업.벤처
+	<input type="radio" value="card3">소상공인
+	<input type="radio" value="card1">판로.수출
+	<input type="radio"  value="card2">R&D
+	<input type="radio"  value="card3">금융.세제
+	<input type="radio"  value="card1">인력
+			</div>
+<div align=center >
+
+<table id="calendar" style="     width: 100%;
+    min-width: 750px;
+    max-width: 800px; height: 350px; border : 1px solid black;  /* 두께, 선종류, 선색상*/
+	border-collapse: collapse;  /* border 간격 붙이기 */">
+<thead id="cal">
+		<tr style="background: lightgray;">
+			<th>일</th>
+			<th>월</th>
+			<th>화</th>
+			<th>수</th>
+			<th>목</th>
+			<th>금</th>
+			<th>토</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+			<th></th>
+			<th>1</th>
+			<th>2</th>
+			<th>3</th>
+			<th>4</th>
+			<th>5</th>
+			<th>6</th>
+		</tr>
+		<tr>
+			<th>7</th>
+			<th>8</th>
+			<th>9</th>
+			<th>10</th>
+			<th>11</th>
+			<th>12</th>
+			<th>13</th>
+		</tr>
+		<tr>
+			<th>14</th>
+			<th>15</th>
+			<th>16</th>
+			<th>17</th>
+			<th>18</th>
+			<th>19</th>
+			<th>20</th>
+		</tr>
+		<tr>
+			<th>21</th>
+			<th>22</th>
+			<th>23</th>
+			<th>24</th>
+			<th>25</th>
+			<th>26</th>
+			<th>27</th>
+		</tr>
+		<tr>
+			<th>28</th>
+			<th>29</th>
+			<th>30</th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			
+		</tr>
+	</tbody>
+</table>
+</div>
+<div align=center><label id="notice"><p>*2015년 6월 7일 전체</p> 검색결과, 진행중인 사업은<p> 총 614 건</p> 입니다.</label></div>
+<div align=center style="margin-top: 15px;">
+<table style="width: 100%; min-width: 750px; max-width: 800px;">
+	<thead style="
+    background: lightgray;border : 1px solid black;  /* 두께, 선종류, 선색상*/
+	border-collapse: collapse; 
+">
+		<tr>
+			<th>번호</th>
+			<th>지원사업명</th>
+			<th>주관부서</th>
+			<th>신청기간</th>
+			<th>조회</th>
+		</tr>
+	</thead>
+	<tbody style="text-align:center; font-size:13px;">
+		<tr style="padding-top:15px;padding-bottom:15px;">
+			<td>1</td>
+			<td id="title-list">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가신청..</td>
+			<td>중소기업청</td>
+			<td>2015.06.4 ~ 2015.06.30</td>
+			<td>731</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td id="title-list">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가신청..</td>
+			<td>중소기업청</td>
+			<td>2015.06.4 ~ 2015.06.30</td>
+			<td>731</td>
+		</tr>
+		<tr>
+			<td>614</td>
+			<td id="title-list">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가신청..</td>
+			<td>중소기업청</td>
+			<td>2015.06.4 ~ 2015.06.30</td>
+			<td>731</td>
+		</tr>
+		<tr>
+			<td>614</td>
+			<td id="title-list">2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가신청..</td>
+			<td>중소기업청</td>
+			<td>2015.06.4 ~ 2015.06.30</td>
+			<td>731</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<div align=center>
+<div style="margin: 20px;">
+<i class="fas fa-angle-double-left"></i>
+<i class="fas fa-chevron-left"></i>
+<button style="border: none;
+   background-color: #318bcf;
+	color:white;">1</button>
+<button style="border: none;
+    background: white;">2</button>
+<button style="border: none;
+    background: white;">3</button>
+<button style="border: none;
+    background: white;">4</button>
+<button style="border: none;
+    background: white;">5</button>
+<i class="fas fa-chevron-right"></i>
+<i class="fas fa-angle-double-right"></i>
+</div>
+</div>
+<div align=center>
+<div style="margin: 30px;     padding: 25px;background:#f6f7f9">
+<select name='card'>
+		  <option value='first' selected>키워드</option>
+		  <option value='second'>서울</option>
+		  <option value='third'>경기</option>
+		</select>
+		<input id="email" type="text"/>
+		<input style="background: #318bcf; color: white;" id="checking" type="submit" value="검색"/>
+</div>
+</div>
+
+</body>
+</html>
