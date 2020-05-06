@@ -44,7 +44,7 @@ public class For01Main {
 		System.out.println("Hello, Java1");
 		System.out.println("Hello, Java2");
 		System.out.println("Hello, Java3");
-		
+		System.out.println();
 		System.out.println();
 		
 		for(int i = 1; i <= 3; i++) {
