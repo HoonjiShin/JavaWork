@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>RWD - Media Query</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;  /* RWD 필수 */
+}
+
+.a{
+	background-color : red;
+	padding: 15px;
+	color: white;
+}
+
+.b{
+	background-color : orange;
+	padding: 15px;
+	color: white;
+}
+
+.clear{
+	clear: both;
+}
+
+
+.c {
+		height: 200px;
+    background-color: yellow;
+    color: #ffffff;
+}
+
+.d{
+	height: 200px;
+	background-color: green;
+	color: white;
+	text-align: center;
+	font-size: 12px;
+	padding: 15px;
+}
+
+.e{
+	background-color: blue;
+	color: white;
+	text-align: center;
+	font-size: 12px;
+	padding: 15px;
+}
+
+.f{
+	background-color: pink;
+	color: white;
+	text-align: center;
+	font-size: 12px;
+	padding: 15px;
+}
+
+.g{
+	background-color: purple;
+	color: white;
+	text-align: center;
+	font-size: 12px;
+	padding: 15px;
+}
+
+.h{
+	background-color: aquamarine;
+	color: white;
+	text-align: center;
+	font-size: 12px;
+	padding: 15px;
+}
+/* 1.기본스타일 : PC first */
+[class*="col-"]{
+	float: left;
+	padding: 15px;
+}
+
+.col-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+.col-2 {width: 16.66%; }  /* 2칸 짜리 폭 */
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+/* 2: 768px 이하 일때 적용 */
+@media screen and (max-width: 768px){
+    /* Table */
+    .col-m-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+    .col-m-2 {width: 16.66%; }  /* 2칸 짜리 폭 */
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+}
+
+/* 3: 600px 이하 일때 적용 */
+@media screen and (max-width: 600px){
+    /* mobile */
+    .col-m-m-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+    .col-m-m-2 {width: 16.66%; }  /* 2칸 짜리 폭 */
+    .col-m-m-3 {width: 25%;}
+    .col-m-m-4 {width: 33.33%;}
+    .col-m-m-5 {width: 41.66%;}
+    .col-m-m-6 {width: 50%;}
+    .col-m-m-7 {width: 58.33%;}
+    .col-m-m-8 {width: 66.66%;}
+    .col-m-m-9 {width: 75%;}
+    .col-m-m-10 {width: 83.33%;}
+    .col-m-m-11 {width: 91.66%;}
+    .col-m-m-12 {width: 100%;}
+
+		.a{display: none;}
+}
+</style>
+</head>
+<body>
+<!-- header -->
+<div class="a col-4 col-m-2">
+<h1>A</h1>
+</div>
+
+<div class="b col-8 col-m-10 col-m-m-12">
+<h1>B</h1>
+</div>
+
+<div class="clear"></div>
+
+<!-- menu -->
+<div class="c col-2 col-m-2 col-m-m-12">
+  <h1>C</h1>
+</div>
+
+<!-- article -->
+<div class="d col-6 col-m-8 col-m-m-12">
+        <h1>D</h1>
+</div>
+
+<!-- aside -->
+<div class="e col-4 col-m-2 col-m-m-4">
+        <h3>E</h3>
+</div>
+<div class="f col-4 col-m-2 col-m-m-4">
+        <h3>F</h3>
+</div>
+<div class="g col-4 col-m-3 col-m-m-4">
+        <h3>G</h3>
+</div>
+
+<div class="h col-12 col-m-9 col-m-m-12">
+	<h3>H</h3>
+</div>
+<div class="clear"></div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
