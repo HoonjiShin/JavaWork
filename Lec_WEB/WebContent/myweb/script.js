@@ -23,11 +23,13 @@ $('ul.list-group li.dropdown').hover(function(){
 	function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("navbar_side").style.transform="none";
+  document.getElementById("navbar_side").style.left="0%";
 }
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("navbar_side").style.transform ="translateX(-50%)";
+  document.getElementById("navbar_side").style.left="50%";
 }
 
 $(document).on('ready', function() {
@@ -67,7 +69,7 @@ $(document).on('ready', function() {
 	});
 });
 
-function showData(){
+function showData(url){
     var result = "Your Infomation <br>";
 
     var frm = document.forms["sign-up"];
@@ -78,14 +80,45 @@ function showData(){
     var useraddr2 = frm["finputAddress2"].value;
     var usercity = frm["finputCity"].value;
     var userstate = frm["finputState"].value;
-    var userzip = frm["finputZip"].value;
-    
-    alert("ID: " + userid + "\n"+
-          "PW: " + userpw + "\n"+
-          "ADDRESS: " + useraddr1 + " " +useraddr2 + "\n" +
-          "CITY: " + usercity + "\n"+
-          "STATE:" + userstate + "\n"+
-          "ZIP: " + userzip);
+	var userzip = frm["finputZip"].value;
+	
+	var con_test = confirm( "EMAIL:  " + userid + "\n" + "PW:  " + userpw + "\n" + 
+							"ADDRESS:  " + useraddr1 + " " + useraddr2 + "\n" +
+							"CITY:  " + userstate + " " + usercity + "\n" 
+	);
 
-   
+	if((userid == "")||(userid == null)){
+		alert("Insert Your ID");
+		return;
+	}else if((userpw == "")||(userpw == null)){
+		alert("Insert Your Password");
+		return;
+	}else{
+		if(con_test == true){
+			location.replace(url);
+		}else{
+			return;
+		}
+	}
 }
+
+
+function up(max) {
+    document.getElementById("myNumber").value = parseInt(document.getElementById("myNumber").value) + 1;
+    if (document.getElementById("myNumber").value >= parseInt(max)) {
+        document.getElementById("myNumber").value = max;
+    }
+}
+
+function down(min) {
+    document.getElementById("myNumber").value = parseInt(document.getElementById("myNumber").value) - 1;
+    if (document.getElementById("myNumber").value <= parseInt(min)) {
+        document.getElementById("myNumber").value = min;
+    }
+}
+
+
+
+
+
+

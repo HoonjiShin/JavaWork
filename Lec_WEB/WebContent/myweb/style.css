@@ -108,7 +108,7 @@
 
 .fixed-header .nav-socials {display: none!important;}
 
-
+.index .fixed-header .fa-bars{  color:black }
 
 .main-main {
 
@@ -626,8 +626,24 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(136,209,240,0.50
         overflow-x: hidden;
         transition: 0.5s;
         padding-top: 60px;
-      }
-      
+	  }
+	  
+	  .fixed-header .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+	  }
+	  
+	  .fixed-header .nav-functions .sidenav a{
+		  color: white;
+	  }
       .sidenav a {
         padding: 8px 8px 8px 32px;
         text-decoration: none;
@@ -656,16 +672,29 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(136,209,240,0.50
 
       .fa-bars{
           color: white;
-      }
+	  }
+	  
+	  .signup_nav .fa-bars, .categ_nav .fa-bars{
+		color: black;
+	}
+
       .signup_nav .nav-socials a,.signup_nav .nav-functions a,.signup_nav .list-group-item a {
         color: black;
     }
 
     .signup_nav .navbar-brand svg {
         fill: black;
+	}
+
+	.categ_nav .nav-socials a,.categ_nav .nav-functions a,.categ_nav .list-group-item a {
+        color: black;
     }
 
-    .signup_nav{
+    .categ_nav .navbar-brand svg {
+        fill: black;
+    }
+
+    .signup_nav, .categ_nav{
         position: inherit;
     }
 
@@ -714,4 +743,90 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(136,209,240,0.50
 
     .sign-up{
         padding: 40px 20px 50px 20px;
-    }
+	}
+	
+	.form-check{
+		padding-left: 0 !important;
+	}
+
+	.form-check ul{
+		padding-left: 0 !important;
+		list-style-type: none;
+	}
+
+	.related-selector .figure-caption {
+		font-size: 90%;
+		color: #6c757d;
+		text-align: center;
+	}
+
+	.device-info{
+		padding-top: 80px;
+	}
+
+	.device-image{
+		padding-bottom: 20px;
+	}
+
+	.device-shortdesc ul{
+		list-style-type: none;
+	}
+
+	.device-select{
+		padding-bottom: 30px;
+	}
+
+	#device-kinds{
+		width: 250px;
+	}
+
+	.input-number{
+		width: 150px;
+	}
+
+	.cart{
+		width: 90%;
+		margin-bottom: 50px;
+	}
+
+	@media (min-width: 735px) and (max-width: 768px){
+		#iphone-txt{
+			text-align: left;
+			left: 57%;
+			top: 39%;
+			position: absolute;
+			width: 200px;
+			color: #000;
+			font-size: 10px;
+		}
+	}
+
+	@media (min-width: 769px) and (max-width:990px){
+		#iphone-txt{
+			text-align: left;
+			left: 53%;
+			top: 39%;
+			position: absolute;
+			width: 300px;
+			color: #000;
+			font-size: 15px;
+		}
+	}
+
+	@media (min-width:991px){
+		#iphone-txt{
+			text-align: left;
+			left: 57%;
+			top: 39%;
+			position: absolute;
+			width: 350px;
+			color: #000;
+			font-size: 18px;
+		}
+	}
+
+	@media (max-width:734px){
+		#iphone-txt{
+			padding: 20px 0 20px 0;
+		}
+	}
