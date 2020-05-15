@@ -117,8 +117,33 @@ function down(min) {
     }
 }
 
+function success(){
+	var result = "";
+	var email = document.getElementById("exampleInputEmail1").value;
+	var passwd = document.getElementById("exampleInputPassword1").value;
+	var login_chk = document.getElementById("exampleCheck1");
 
+	if(email == ""||email == null){
+		alert("이메일을 입력하세요");
+		return;
+	}else if(passwd == "" || passwd == null){
+		alert("비밀번호를 입력하세요");
+		return;
+	}else if(login_chk.checked ==false){
+		alert("Are you a robot??");
+		return;
+	}
+	alert("Hello! " + email +"\nWelcome to Our Webpage!!");
 
+	result += "I'm " + email;
+
+	document.getElementById("result").innerHTML = result;
+}
+
+function addtocart(){
+	var count = document.getElementById("myNumber").value;
+	alert("제품이 "+ count +"개 추가 되었습니다.");
+}
 
 
 

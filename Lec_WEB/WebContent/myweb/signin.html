@@ -192,6 +192,7 @@
 
 <div class="account container">
 	<div class="text-center">
+		<h3 class="text-left" id="result">Who are you??</h3>
 		<div class="loginform">
 			<h4 id="login">Login</h4>
 			<div>
@@ -211,9 +212,9 @@
 					</div>
 					<div class="form-check">
 					  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-					  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+					  <label class="form-check-label" for="exampleCheck1">I'm not a robot!!</label>
 					</div>
-					<button type="submit" class="btn btn-outline-secondary">Submit</button>
+					<button type="button" class="btn btn-outline-secondary" onclick="success()">Submit</button>
 				  </form>
 			</div>
 		</div>
@@ -227,6 +228,9 @@
 					<li id="desc-1">Order: track and manage purchases and returns.</li>
 					<li id="desc-2">Address Book and Card Wallet: safely store delivery and payment details for faster checkout</li>
 					<li id="desc-3">Saved for later: wish list your preferred items and track their availability</li>
+					<li id="desc-4">Earn reward points, unlock exclusive rewards, and enjoy member-only perks</li>
+					<li id="desc-5">View order history and track & manage purchases and returns</li>
+					<li id="desc-6">Safely store delivery and payment details for faster checkout</li>
 				</ul>
 			</div>
 			<button type="button" class="btn btn-outline-secondary">
@@ -236,14 +240,13 @@
 	</div>
 </div>
 
-
- <!-- footer -->
- <footer class="footer">
+<!-- footer -->
+<footer class="footer">
 	<div class="container">
 	  <div class="row">
-		<div class="col-lg-6 text-center">
+		<div class="d-none d-lg-block d-xl-block col-lg-6 text-center">
 			<div class="row">
-			  <div class="col-sm">
+			  <div class="d-none d-md-block d-lg-block d-xl-block col-md">
 				  <div class="footer_content">
 				  <h5 class="text-left">INFO</h5>
 				  <ul class="footer_menu text-left">
@@ -253,7 +256,7 @@
 				  </ul>
 				  </div>
 			</div>
-			  <div class="col-sm">
+			  <div class="d-none d-md-block d-lg-block d-xl-block col-md">
 				  <div class="footer_content ">
 				  <h5 class="text-left">LEGAL</h5>
 				  <ul class="footer_menu text-left">
@@ -263,7 +266,7 @@
 				  </div>
 			 </div>
 			 <br>
-			  <div class="col-sm">
+			  <div class="d-none d-md-block d-lg-block d-xl-block col-md">
 				  <div class="footer_content">
 					  <h5 class="text-left">SUPPORT</h5>
 					  <ul class="footer_menu text-left">
@@ -275,7 +278,7 @@
 				</div>
 		  </div>
 		</div>
-		<div class="col-lg-4 col-md-none text-left">
+		<div class="d-none d-lg-block d-xl-block col-lg-4">
 		  <label><h6>SUPSCRIPTION</h6></label>
 		  <br>
 		  <div class="subscrip">
@@ -283,12 +286,70 @@
 		  <input type="submit" value="Sign up">
 		  </div>
 		</div>
-		<div class="col-lg-2">
+		<div class="d-none d-lg-block d-xl-block col-lg-2">
+		</div>
+		<div class="d-block d-xs-block d-sm-block d-md-block d-lg-none d-xl-none col-xs-12 col-sm-12">
+			<div id="accordion">
+				<div class="card">
+				  <div class="card-header" id="headingOne">
+					<h5 class="mb-0 text-center">
+					  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						INFO 
+						<!-- <i class="fas fa-angle-down"></i> -->
+					 </button>
+					</h5>
+				  </div>
+			  
+				  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+					<div class="card-body">
+						<ul class="footer_menu text-center">
+							<li><a href="#">Company</a></li>
+							<li><a href="#">Business</a></li>
+							<li><a href="#">Ambassador</a></li>
+						</ul>
+					</div>
+				  </div>
+				</div>
+				<div class="card">
+				  <div class="card-header" id="headingTwo">
+					<h5 class="mb-0 text-center">
+					  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						LEGAL
+					  </button>
+					</h5>
+				  </div>
+				  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+					<div class="card-body">
+						<ul class="footer_menu text-center">
+							<li><a href="#">Privacy</a></li>
+							<li><a href="#">Terms of use</a></li>
+						</ul>
+					</div>
+				  </div>
+				</div>
+				<div class="card">
+				  <div class="card-header" id="headingThree">
+					<h5 class="mb-0 text-center">
+					  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						SUPPORT
+					  </button>
+					</h5>
+				  </div>
+				  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+					<div class="card-body">
+						<ul class="footer_menu text-center">
+							<li><a href="#">FAQ</a></li>
+							<li><a href="#">Contact Us</a></li>
+							<li><a href="#">Warranty</a></li>
+						</ul>
+					</div>
+				  </div>
+				</div>
+			  </div>
 		</div>
 	  </div>
 	</div>
 </footer>
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
