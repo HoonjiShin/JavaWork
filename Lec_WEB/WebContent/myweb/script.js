@@ -81,11 +81,6 @@ function showData(url){
     var usercity = frm["finputCity"].value;
     var userstate = frm["finputState"].value;
 	var userzip = frm["finputZip"].value;
-	
-	var con_test = confirm( "EMAIL:  " + userid + "\n" + "PW:  " + userpw + "\n" + 
-							"ADDRESS:  " + useraddr1 + " " + useraddr2 + "\n" +
-							"CITY:  " + userstate + " " + usercity + "\n" 
-	);
 
 	if((userid == "")||(userid == null)){
 		alert("Insert Your ID");
@@ -93,13 +88,13 @@ function showData(url){
 	}else if((userpw == "")||(userpw == null)){
 		alert("Insert Your Password");
 		return;
-	}else{
-		if(con_test == true){
-			location.replace(url);
-		}else{
-			return;
-		}
 	}
+
+	alert( "EMAIL:  " + userid + "\n" + "PW:  " + userpw + "\n" +
+							"ADDRESS:  " + useraddr1 + " " + useraddr2 + "\n" +
+							"CITY:  " + userstate + " " + usercity + "\n"
+	);
+
 }
 
 
@@ -144,6 +139,3 @@ function addtocart(){
 	var count = document.getElementById("myNumber").value;
 	alert("제품이 "+ count +"개 추가 되었습니다.");
 }
-
-
-

@@ -454,7 +454,7 @@ border: none;
 		width: 100%;
 		height: 100%;
 	}
-	
+
 	.two {
 		grid-column: 3 / 5;
 		background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT2ZfgFw8imMqqJqh4EAjMP-xMeKPQ04R6gyr1Vhjj5-fpF5PWG&usqp=CAU");
@@ -466,9 +466,9 @@ border: none;
 		max-height: 300px;
 		height: 100vh;
 	}
-	
+
 	.three {
-	
+
 		grid-column: 1 / 5;
 		background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT-kIodVTZCYGrSCRvyoC_1XwR4vBT9H2Vw3Gp5rlOLvCXz8Er_&usqp=CAU");
 		background-size: cover;
@@ -479,7 +479,7 @@ border: none;
 		max-height: 300px;
 		height: 100vh;
 	}
-	
+
 	.four {
 		grid-column: 1 / 3;
 		background-image: url("https://m.media-amazon.com/images/S/aplus-media/sc/7b8281ca-6e1b-49a1-bd64-f6583098efb8.__CR0,0,300,300_PT0_SX300_V1___.jpg");
@@ -491,31 +491,31 @@ border: none;
 		max-height: 300px;
 		height: 100vh;
 	}
-	
+
 	.five {
 		grid-column: 3 / 5;
 		background-image: url("https://cdn.shopify.com/s/files/1/0015/1810/8724/files/vc_ciel_ip_11_etoile_pink_marble_11.jpg?24224");
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center center;
-		position: relative;	
-		border-radius: 6px;	
-		max-height: 300px;	
-		height: 100vh;	
+		position: relative;
+		border-radius: 6px;
+		max-height: 300px;
+		height: 100vh;
 	}
-	
-	.six {	
+
+	.six {
 		grid-column: 1 / 5;
-		background-image: url("https://cdn-stamplib.casetify.com/cms/image/e482d96af29592a8c71924e7a3caf3b3.jpg");	
-		background-size: cover;	
-		background-repeat: no-repeat;	
-		background-position: center center;	
-		position: relative;	
-		border-radius: 6px;	
-		max-height: 300px;	
-		height: 100vh;	
+		background-image: url("https://cdn-stamplib.casetify.com/cms/image/e482d96af29592a8c71924e7a3caf3b3.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		position: relative;
+		border-radius: 6px;
+		max-height: 300px;
+		height: 100vh;
 	}
-	
+
 	.seven {
 		grid-column: 1 / 5;
 		background-image: url("https://cdn.casetify.com/static/cms/image/1035/visual-custom-apple-watch-bands.jpg?v2");
@@ -585,7 +585,7 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(136,209,240,0.50
 	.footer_menu a{
 		color:black;
     }
-    
+
     .sidenav {
         height: 100%;
         width: 0;
@@ -593,12 +593,12 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(136,209,240,0.50
         z-index: 1;
         top: 0;
         left: 0;
-        background-color: #111;
+        background-color: white;
         overflow-x: hidden;
         transition: 0.5s;
         padding-top: 60px;
 	  }
-	  
+
 	  .fixed-header .sidenav {
         height: 100%;
         width: 0;
@@ -606,22 +606,22 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(136,209,240,0.50
         z-index: 1;
         top: 0;
         left: 0;
-        background-color: #111;
+        background-color: white;
         overflow-x: hidden;
         transition: 0.5s;
         padding-top: 60px;
 	  }
-	  
+
 	  .fixed-header .nav-functions .sidenav a{
-		  color: white;
+		  color: black;
 	  }
 
 	  .fixed-header .nav-functions .categ_sidebar  a{
-		color: white !important;
+		color: black !important;
 	}
 
 	.categ_nav .nav-socials a, .categ_nav .nav-functions a, .categ_nav .list-group-item a {
-		color: white !important;
+		color: black !important;
 	}
 
       .sidenav a {
@@ -632,11 +632,11 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(136,209,240,0.50
         display: block;
         transition: 0.3s;
       }
-      
+
       .sidenav a:hover {
         color: #f1f1f1;
       }
-      
+
       .sidenav .closebtn {
         position: absolute;
         top: 0;
@@ -644,7 +644,7 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(136,209,240,0.50
         font-size: 36px;
         margin-left: 50px;
       }
-      
+
       @media screen and (max-height: 450px) {
         .sidenav {padding-top: 15px;}
         .sidenav a {font-size: 18px;}
@@ -653,7 +653,7 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(136,209,240,0.50
       .fa-bars{
           color: white;
 	  }
-	  
+
 	  .signup_nav .fa-bars, .categ_nav .fa-bars{
 		color: black;
 	}
@@ -681,7 +681,7 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(136,209,240,0.50
     .signup_nav .dropdown-menu{
         background-color: white;
     }
-    
+
     #desc-1,#desc-2,#desc-3,#desc-4,#desc-5,#desc-6{
         font-size: 13px;
         padding-bottom: 8px;
@@ -696,7 +696,7 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(136,209,240,0.50
     }
 
     .btn-outline-secondary {
-        
+
         border-color: #6c757d;
     }
 
@@ -725,7 +725,7 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(136,209,240,0.50
 		padding: 40px 20px 50px 20px;
 		min-height: 620px;
 	}
-	
+
 	.form-check{
 		padding-left: 0 !important;
 	}
@@ -830,4 +830,6 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 45%, rgba(136,209,240,0.50
 		padding: 10px 0 10px 0;
 	}
 
-	
+.categ_nav .nav-functions a{
+	color: black !important;
+}
