@@ -5,11 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JSP START</title>
+<title>JSP 시작</title>
 </head>
 <body>
-It's first file of JSP!
-<a href="page1.jsp">page 1</a>
-<a href="page2.jsp">page2</a>
+첫 JSP 파일입니다!<br>
+<a href="page1.jsp">page1</a><br>
+<a href="./page2.jsp">page2</a><br>
+<a href="/page3.jsp">page3</a><br>
 </body>
 </html>

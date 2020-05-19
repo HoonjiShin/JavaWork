@@ -5,11 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>page1</title>
+<title>sub</title>
 </head>
 <body>
-<h1>page1</h1>
-<a href="Hello.jsp">hello</a><br>
-<button onclick="history.back()">back</button>
+<h4>현페이지는 subpage</h4>
 </body>
 </html>

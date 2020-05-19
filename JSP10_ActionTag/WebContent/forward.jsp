@@ -5,11 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>page1</title>
+<title>forward</title>
 </head>
 <body>
-<h1>page1</h1>
-<a href="Hello.jsp">hello</a><br>
-<button onclick="history.back()">back</button>
+<!-- Action Tag -->
+<h3>지금은 forwardpage</h3>
+<jsp:forward page="sub.jsp"/>
+<p>위 라인의 내용은 sub 페이지 의 내용입니다</p>
 </body>
 </html>
