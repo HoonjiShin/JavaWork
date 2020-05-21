@@ -2,24 +2,21 @@
     pageEncoding="UTF-8"%>
 <%@ page import = "java.sql.*"%> <%-- JDBC 관련 import --%>    
 <%@ page import = "java.text.SimpleDateFormat" %>
-
 <%
 	int curPage = 1;   // 현재 페이지 (디폴트 1 page)
 	
 	// 현재 몇 페이지인지 parameter 받아오기 + 검증
 	String pageParam = request.getParameter("page");
 	if(pageParam != null && !pageParam.trim().equals("")){
-		try{
+		try{ 
+			// 1이상의 자연수 이어야 한다
 			int p = Integer.parseInt(pageParam);
-			if(p > 0)
-				curPage = p;
+			if(p > 0) curPage = p;
 		} catch(NumberFormatException e){
-			
+			// page parameter 오류는 별도의 exception 처리 안함 
 		}
-	}
+	} // end if
 %>
-
-
 
 <%!
 	// JDBC 관련 기본 객체변수
@@ -37,20 +34,24 @@
 %>
 
 <%!
-	// 페이징 쿼리문 준비
-	//글 목록 전체 개수 가져오기
+	// 쿼리문 준비
+	//final String SQL_WRITE_SELECT = 
+	//	"SELECT * FROM test_write ORDER BY wr_uid DESC";
+
+	// 페이징
+	// 글 목록 전체 개수 가져오기
 	final String SQL_WRITE_COUNT_ALL = "SELECT count(*) FROM test_write";
-
-	//fromRow 부터 pageRows 만큼 SELECT
+	
+	// fromRow 부터 pageRows 만큼 SELECT
 	// (몇번째) 부터 (몇개) 만큼
-	final String SQL_WRITE_SELECT_FROM_ROW = "SELECT * FROM " + 
-		"(SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM test_write ORDER BY wr_uid DESC) T) " + 
-		"WHERE RNUM >= ? AND RNUM < ?"; 
-
-	//페이징 관련 세팅 값들
-	int wrtiePages = 10; //한 [페이징] 에 몇개의 '페이지'를 보일것인가?
-	int pageRows = 8; //한 '페이지'에 몇개의 글을 리스트 할 것인가?
-	int totalPage = 0; //총 몇 '페이지' 분량인가?
+	final String SQL_WRITE_SELECT_FROM_ROW =  "SELECT * FROM " + 
+			"(SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM test_write ORDER BY wr_uid DESC) T) " + 
+			"WHERE RNUM >= ? AND RNUM < ?";
+	
+	// 페이징 관련 세팅 값들
+	int writePages = 10;   // 한 [페이징] 에 몇개의 '페이지' 를 표현할 것인가?
+	int pageRows = 8;    // 한 '페이지' 에 몇개의 글을 리스트업 할 것인가?
+	int totalPage = 0;	 // 총 몇 '페이지' 분량인가?
 %>
 <%
 	try{
@@ -64,26 +65,29 @@
 		rs = pstmt.executeQuery();
 		
 		if(rs.next())
-			cnt = rs.getInt(1);
+			cnt = rs.getInt(1);   // count(*), 전체 글의 개수
+			
 		rs.close();
 		pstmt.close();
 		
-		totalPage = (int)Math.ceil(cnt / (double)pageRows); //총 몇 페이지 분량인가?
+		totalPage = (int)Math.ceil(cnt / (double)pageRows); // 총 몇페이지 분량
 		
-		int fromRow = (curPage - 1) * pageRows + 1;	// 몇번째 row 부터?
-		
+		int fromRow = (curPage - 1) * pageRows + 1;  // 몇번째 row 부터?
+				
 		pstmt = conn.prepareStatement(SQL_WRITE_SELECT_FROM_ROW);
-		pstmt.setInt(1, fromRow);    // 몇번째 row 부터
-		pstmt.setInt(2, fromRow + pageRows);  // 몇번째 row 전까지?
-		rs = pstmt.executeQuery();	
-
+		pstmt.setInt(1, fromRow);  
+		pstmt.setInt(2, fromRow + pageRows);
+		rs = pstmt.executeQuery();
+		
+		//out.println("쿼리 성공<br>");
 %>	
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>글 목록</title>
+<title>글 목록 <%= curPage %>페이지</title>
 <style>
 table {width: 100%;}
 table, th, td {
@@ -91,14 +95,19 @@ table, th, td {
 	border-collapse: collapse;
 }
 </style>
-</head>
-<body>
 
-	
+<!-- 페이징 -->
+<link rel="stylesheet" type="text/css" href="CSS/common.css"/>
+<script src="https://kit.fontawesome.com/bb29575d31.js"></script>
+
+</head>
+<body>	
 		<hr>
-		<h2>리스트</h2>
+		<h2>리스트 <%= curPage %>페이지</h2>
+		<h4><%= cnt %>개</h4> <!-- 전체 글 개수 -->
 		<table>
 			<tr>
+				<th>row</th> <!-- row 번호 -->
 				<th>UID</th>
 				<th>제목</th>
 				<th>작성자</th>
@@ -108,6 +117,9 @@ table, th, td {
 <%
 		while(rs.next()){
 			out.println("<tr>");
+			
+			int rnum = rs.getInt("rnum");  // rownum 받아오기
+			
 			int uid = rs.getInt("wr_uid");
 			String subject = rs.getString("wr_subject");
 			String name = rs.getString("wr_name");
@@ -121,8 +133,9 @@ table, th, td {
 						+ new SimpleDateFormat("hh:mm:ss").format(t);
 			}
 			
+			out.println("<td>" + rnum + "</td>");  // rownum 찍어주기
 			out.println("<td>" + uid + "</td>");
-			out.println("<td><a href='view.jsp?uid=" + uid + "'>" + subject + "</a></td>");
+			out.println("<td><a href='view.jsp?uid=" + uid + "&page=" + curPage + "'>" + subject + "</a></td>");
 			out.println("<td>" + name + "</td>");
 			out.println("<td>" + viewcnt + "</td>");
 			out.println("<td>" + regdate + "</td>");
@@ -152,7 +165,12 @@ table, th, td {
 %>
 <%-- 위 트랜잭션이 마무리 되면 페이지 보여주기 --%>
 
-
+<%-- 페이징 --%>
+<jsp:include page="pagination.jsp">
+	<jsp:param value="<%= writePages %>" name="writePages"/>
+	<jsp:param value="<%= totalPage %>" name="totalPage"/>
+	<jsp:param value="<%= curPage %>" name="curPage"/>
+</jsp:include>
 
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
