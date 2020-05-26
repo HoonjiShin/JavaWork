@@ -15,7 +15,7 @@ public class WriteDTO {
 	private String subject;
 	private String content;
 	private String name;
-	private int viewCnt;
+	private int viewcnt;
 	private String regDate;
 	
 	/*
@@ -27,13 +27,13 @@ public class WriteDTO {
 		super();
 	}
 
-	public WriteDTO(int uid, String subject, String content, String name, int viewCnt) {
+	public WriteDTO(int uid, String subject, String content, String name, int viewcnt) {
 		super();
 		this.uid = uid;
 		this.subject = subject;
 		this.content = content;
 		this.name = name;
-		this.viewCnt = viewCnt;
+		this.viewcnt = viewcnt;
 		
 	}
 
@@ -79,12 +79,12 @@ public class WriteDTO {
 
 	public int getViewcnt() {
 		System.out.println("getViewcnt호출");
-		return viewCnt;
+		return viewcnt;
 	}
 
-	public void setViewcnt(int viewCnt) {
-		System.out.println("setViewcnt("+viewCnt+")호출");
-		this.viewCnt = viewCnt;
+	public void setViewcnt(int viewcnt) {
+		System.out.println("setViewcnt("+viewcnt+")호출");
+		this.viewcnt = viewcnt;
 	}
 
 	public String getRegDate() {
@@ -100,7 +100,7 @@ public class WriteDTO {
 	//테스트,개발용으로 toString() 오버라이딩 하면 좋다.
 	@Override
 	public String toString() {
-		return "WriteDTO]" + uid + " : " + subject + " : " + content + " : " + name + " : " + viewCnt + " : " + regDate;
+		return "WriteDTO]" + uid + " : " + subject + " : " + content + " : " + name + " : " + viewcnt + " : " + regDate;
 	}
 	
 }
