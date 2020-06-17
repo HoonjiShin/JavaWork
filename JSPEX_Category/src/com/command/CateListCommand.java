@@ -46,6 +46,7 @@ public class CateListCommand implements Command {
 		
 		try {
 			dao = new CategoryDAO();
+			
 			if(request.getParameter("ca_parent") == null) {
 				arr = dao.selectByNoParent();
 			}else {
@@ -54,8 +55,10 @@ public class CateListCommand implements Command {
 		
 			if(arr == null) {
 				message.append("[리스트할 데이터가 없습니다]");
+			} else if(ca_depth >= 2 && ca_parent == 0) {
+				message.append("[리스트할 데이터가 없습니다]");
 			} else {
-				status = "OK";
+				status = "success";
 			}
 			
 		} catch (SQLException e) {
