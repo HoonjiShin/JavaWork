@@ -1,4 +1,4 @@
-package com.lec.sts13_jdbc.board.controller;
+package com.lec.sts15_mybatis.board.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -7,15 +7,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.lec.sts13_jdbc.board.C;
-import com.lec.sts13_jdbc.board.beans.BWriteDTO;
-import com.lec.sts13_jdbc.board.command.BCommand;
-import com.lec.sts13_jdbc.board.command.BDeleteCommand;
-import com.lec.sts13_jdbc.board.command.BListCommand;
-import com.lec.sts13_jdbc.board.command.BSelectCommand;
-import com.lec.sts13_jdbc.board.command.BUpdateCommand;
-import com.lec.sts13_jdbc.board.command.BViewCommand;
-import com.lec.sts13_jdbc.board.command.BWriteCommand;
+import com.lec.sts15_mybatis.board.C;
+import com.lec.sts15_mybatis.board.beans.BWriteDTO;
+import com.lec.sts15_mybatis.board.command.BCommand;
+import com.lec.sts15_mybatis.board.command.BDeleteCommand;
+import com.lec.sts15_mybatis.board.command.BListCommand;
+import com.lec.sts15_mybatis.board.command.BSelectCommand;
+import com.lec.sts15_mybatis.board.command.BUpdateCommand;
+import com.lec.sts15_mybatis.board.command.BViewCommand;
+import com.lec.sts15_mybatis.board.command.BWriteCommand;
 
 @Controller
 @RequestMapping("/board")

@@ -1,16 +1,17 @@
-package com.lec.sts13_jdbc.board.beans;
+package com.lec.sts15_mybatis.board.beans;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 
-import com.lec.sts13_jdbc.board.C;
+import com.lec.sts15_mybatis.board.C;
 
 public class BWriteDAO {
 	JdbcTemplate template;
@@ -110,6 +111,7 @@ public class BWriteDAO {
 	public int update(final BWriteDTO dto) {
 		int cnt = 0;
 		
+		cnt = 
 		template.update(C.SQL_WRITE_UPDATE, new PreparedStatementSetter() {
 			
 			@Override
@@ -120,10 +122,24 @@ public class BWriteDAO {
 			}
 		});
 		
-		
 		return cnt;
 	}
 	
+	public int deleteByUid(final int uid) {
+		int cnt = 0;
+		
+		cnt = 
+		template.update(C.SQL_WRITE_DELETE_BY_UID, new PreparedStatementSetter() {
+			
+			@Override
+			public void setValues(PreparedStatement ps) throws SQLException {
+				ps.setInt(1, uid);
+				
+			}
+		});		
+		
+		return cnt;
+	}
 	
 	
 	

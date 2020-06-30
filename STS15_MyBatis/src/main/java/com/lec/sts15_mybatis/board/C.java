@@ -1,4 +1,4 @@
-package com.lec.sts13_jdbc.board;
+package com.lec.sts15_mybatis.board;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
