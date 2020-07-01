@@ -4,7 +4,9 @@ import java.util.Map;
 
 import org.springframework.ui.Model;
 
+import com.lec.sts15_mybatis.board.C;
 import com.lec.sts15_mybatis.board.beans.BWriteDAO;
+import com.lec.sts15_mybatis.board.beans.IWriteDAO;
 
 public class BDeleteCommand implements BCommand {
 
@@ -12,7 +14,7 @@ public class BDeleteCommand implements BCommand {
 	public void execute(Model model) {
 		Map<String, Object> map = model.asMap();
 		int uid = (Integer)map.get("uid");
-		BWriteDAO dao = new BWriteDAO();
+		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
 		
 		int cnt = dao.deleteByUid(uid);
 		model.addAttribute("result", cnt);		
